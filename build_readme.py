@@ -53,52 +53,60 @@ DISCLAIMER_MARKERS = (
 
 MIN_TOTAL_ENTRIES = 60  # refuse to overwrite the README if the feed looks broken
 
-# --- Hero banner (figlet dos_rebel renderings and an original shuriken sprite, kept as
-# plain strings so the workflow needs nothing beyond the standard library) ---
+# --- Hero banner (figlet ANSI Shadow renderings plus two original sprites, kept as plain
+# strings so the workflow needs nothing beyond the standard library) ---
 BANNER_TOP = [
-    "   █████████   █████     █████████  ██████████   █████████  █████  █████ ███████████   █████ ███████████ █████ █████",
-    "  ███░░░░░███ ░░███     ███░░░░░███░░███░░░░░█  ███░░░░░███░░███  ░░███ ░░███░░░░░███ ░░███ ░█░░░███░░░█░░███ ░░███",
-    " ░███    ░███  ░███    ░███    ░░░  ░███  █ ░  ███     ░░░  ░███   ░███  ░███    ░███  ░███ ░   ░███  ░  ░░███ ███",
-    " ░███████████  ░███    ░░█████████  ░██████   ░███          ░███   ░███  ░██████████   ░███     ░███      ░░█████",
-    " ░███░░░░░███  ░███     ░░░░░░░░███ ░███░░█   ░███          ░███   ░███  ░███░░░░░███  ░███     ░███       ░░███",
-    " ░███    ░███  ░███     ███    ░███ ░███ ░   █░░███     ███ ░███   ░███  ░███    ░███  ░███     ░███        ░███",
-    " █████   █████ █████   ░░█████████  ██████████ ░░█████████  ░░████████   █████   █████ █████    █████       █████",
-    "░░░░░   ░░░░░ ░░░░░     ░░░░░░░░░  ░░░░░░░░░░   ░░░░░░░░░    ░░░░░░░░   ░░░░░   ░░░░░ ░░░░░    ░░░░░       ░░░░░",
+    " █████╗ ██╗    ███████╗███████╗ ██████╗██╗   ██╗██████╗ ██╗████████╗██╗   ██╗",
+    "██╔══██╗██║    ██╔════╝██╔════╝██╔════╝██║   ██║██╔══██╗██║╚══██╔══╝╚██╗ ██╔╝",
+    "███████║██║    ███████╗█████╗  ██║     ██║   ██║██████╔╝██║   ██║    ╚████╔╝",
+    "██╔══██║██║    ╚════██║██╔══╝  ██║     ██║   ██║██╔══██╗██║   ██║     ╚██╔╝",
+    "██║  ██║██║    ███████║███████╗╚██████╗╚██████╔╝██║  ██║██║   ██║      ██║",
+    "╚═╝  ╚═╝╚═╝    ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═╝   ╚═╝      ╚═╝",
 ]
 BANNER_NINJA = [
-    " ██████   █████ █████ ██████   █████       █████   █████████",
-    "░░██████ ░░███ ░░███ ░░██████ ░░███       ░░███   ███░░░░░███",
-    " ░███░███ ░███  ░███  ░███░███ ░███        ░███  ░███    ░███",
-    " ░███░░███░███  ░███  ░███░░███░███        ░███  ░███████████",
-    " ░███ ░░██████  ░███  ░███ ░░██████        ░███  ░███░░░░░███",
-    " ░███  ░░█████  ░███  ░███  ░░█████  ███   ░███  ░███    ░███",
-    " █████  ░░█████ █████ █████  ░░█████░░████████   █████   █████",
-    "░░░░░    ░░░░░ ░░░░░ ░░░░░    ░░░░░  ░░░░░░░░   ░░░░░   ░░░░░",
+    "███╗   ██╗██╗███╗   ██╗     ██╗ █████╗",
+    "████╗  ██║██║████╗  ██║     ██║██╔══██╗",
+    "██╔██╗ ██║██║██╔██╗ ██║     ██║███████║",
+    "██║╚██╗██║██║██║╚██╗██║██   ██║██╔══██║",
+    "██║ ╚████║██║██║ ╚████║╚█████╔╝██║  ██║",
+    "╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚════╝ ╚═╝  ╚═╝",
+]
+NINJA_SPRITE = [
+    "     ▄██████▄",
+    " ▄▄ ███▀██▀███",
+    "  ▀ ▀████████▀",
+    "     ▄██████▄",
+    "  ▄██▀▀██████▀▀▀",
+    " █▀    ██████",
+    "      ▄██▀▀██▄",
+    "    ▄██▀    ▀██▄",
 ]
 SHURIKEN = [
-    "        █▄",
-    "       ▄███",
-    "    ▄███████▄",
-    " ▄████     ██▄",
-    "▀▀▀███     █████▀",
-    "    ██▄▄▄▄▄██▀▀",
-    "     ▀████▀▀",
-    "      ▀██",
-    "        ▀",
+    "      █▄",
+    "    ▄████",
+    " ▄███▀▀▀██▄",
+    "▀▀███   ████▀",
+    "   ▀█████▀▀",
+    "    ▀██▀",
+    "      ▀",
 ]
+
+
+def _vpad(lines, h):
+    out = [""] * ((h - len(lines)) // 2) + lines
+    return out + [""] * (h - len(out))
 
 
 def banner(total: int, sections: int, reviewed: str) -> str:
-    """The hero block: AI SECURITY, then NINJA flanked by two shurikens, then a stats line."""
+    """The hero block: AI SECURITY, then a ninja throwing a shuriken past the word NINJA, then a stats line."""
     width = max(len(l) for l in BANNER_TOP)
-    sw = max(len(l) for l in SHURIKEN)
+    lw = max(len(l) for l in NINJA_SPRITE)
     nw = max(len(l) for l in BANNER_NINJA)
-    h = max(len(SHURIKEN), len(BANNER_NINJA))
-    ninja = [""] * ((h - len(BANNER_NINJA)) // 2) + BANNER_NINJA
-    ninja += [""] * (h - len(ninja))
-    shu = SHURIKEN + [""] * (h - len(SHURIKEN))
-    gap = (width - 2 * sw - nw) // 2
-    mid = [(shu[i].ljust(sw) + " " * gap + ninja[i].ljust(nw) + " " * gap + shu[i]).rstrip() for i in range(h)]
+    rw = max(len(l) for l in SHURIKEN)
+    h = max(len(NINJA_SPRITE), len(BANNER_NINJA), len(SHURIKEN))
+    left, word, right = _vpad(NINJA_SPRITE, h), _vpad(BANNER_NINJA, h), _vpad(SHURIKEN, h)
+    gap = (width - lw - nw - rw) // 2
+    mid = [(left[i].ljust(lw) + " " * gap + word[i].ljust(nw) + " " * gap + right[i]).rstrip() for i in range(h)]
     a, b, c = f"ENTRIES  {total}", f"SECTIONS  {sections}", f"LAST REVIEWED  {reviewed}"
     g = (width - len(a) - len(b) - len(c)) // 2
     stats = a + " " * g + b + " " * (width - len(a) - len(b) - len(c) - g) + c
