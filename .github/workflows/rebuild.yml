@@ -1,0 +1,31 @@
+name: Rebuild README from aisecurity.ninja
+
+# The site's own content audit runs monthly on the 4th; this rebuild follows it.
+on:
+  schedule:
+    - cron: "0 6 7 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rebuild README from the site's data
+        run: python3 build_readme.py
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README unchanged, nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Rebuild README from aisecurity.ninja data"
+          git push
