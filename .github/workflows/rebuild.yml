@@ -13,7 +13,7 @@ jobs:
   rebuild:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       # The live site's bot protection challenges datacenter IPs (GitHub runners
       # included), so the data is read from the site's source repository instead.
