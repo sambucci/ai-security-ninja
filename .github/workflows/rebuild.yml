@@ -15,7 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The live site's bot protection challenges datacenter IPs (GitHub runners
+      # included), so the data is read from the site's source repository instead.
+      # SOURCE_REPO_TOKEN: fine-grained PAT, read-only Contents on that repository.
       - name: Rebuild README from the site's data
+        env:
+          SOURCE_REPO_TOKEN: ${{ secrets.SOURCE_REPO_TOKEN }}
         run: python3 build_readme.py
 
       - name: Commit if anything changed
