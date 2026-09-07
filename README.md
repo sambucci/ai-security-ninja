@@ -15,7 +15,7 @@
       ▄██▀▀██▄      ╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚════╝ ╚═╝  ╚═╝          ▀
     ▄██▀    ▀██▄
 
-ENTRIES  108              SECTIONS  7               LAST REVIEWED  2026-08-05
+ENTRIES  160              SECTIONS  7               LAST REVIEWED  2026-09-06
 ```
 
 A curated, living map of AI security: frameworks, foundational papers, code, guides, courses and communities. This repository mirrors the curated sections of [aisecurity.ninja](https://aisecurity.ninja) and rebuilds itself from the site's data once a month.
@@ -24,17 +24,17 @@ I built the map as my own reference and made it public because it seemed useful.
 
 **Inclusion is not endorsement.** I am not affiliated with, endorsed by or connected to any of the projects, organisations, courses or communities listed. Entries are amended or removed on evidence; see [how to suggest a change](#about-this-repository) at the end.
 
-108 entries in 7 sections. Sections last reviewed on the site: 2026-08-05.
+160 entries in 7 sections. Sections last reviewed on the site: 2026-09-06.
 
 ## Contents
 
-- [Frameworks and Governance](#frameworks-and-governance) (30)
+- [Frameworks and Governance](#frameworks-and-governance) (46)
 - [Foundational papers](#foundational-papers) (11)
-- [Code and PoCs](#code-and-pocs) (28)
-- [Guides and Tutorials](#guides-and-tutorials) (11)
-- [Courses](#courses) (17)
-- [Communities](#communities) (5)
-- [Links](#links) (6)
+- [Code and PoCs](#code-and-pocs) (44)
+- [Guides and Tutorials](#guides-and-tutorials) (24)
+- [Courses](#courses) (18)
+- [Communities](#communities) (7)
+- [Links](#links) (10)
 
 ## Frameworks and Governance
 
@@ -48,9 +48,21 @@ A collection of guides and frameworks (not laws) from government-affiliated or o
 
   This document presents a detailed taxonomy and standardized terminology for adversarial machine learning (AML), focusing on attacks and mitigation strategies for AI systems. It classifies attacks into categories based on learning methods, attacker goals, and stages of the machine learning lifecycle. The report emphasizes the importance of understanding adversarial risks across predictive and generative AI systems and outlines corresponding mitigation techniques. By providing a common language, the framework aids in securing AI systems against threats like evasion, data poisoning, and privacy violations. This entry points to the 2025 edition, NIST AI 100-2e2025, published in March 2025, which extends the 2023 taxonomy to generative AI, including attacks on large language models, retrieval-augmented generation and agents.
 
+- **[Agent Name Service (ANS) for Secure AI Agent Discovery v1.0](https://genai.owasp.org/resource/agent-name-service-ans-for-secure-al-agent-discovery-v1-0/)** (OWASP, International)
+
+  A proposed scheme for agents to discover and authenticate each other, addressing the question of how one agent knows which other agent it is talking to. Early work, published as version 1.0.
+
+- **[Agentic AI: Threats and Mitigations](https://genai.owasp.org/resource/agentic-ai-threats-and-mitigations/)** (OWASP, International)
+
+  Threat reference for agentic systems, working through what changes once a model can plan, remember and call tools: goal manipulation, misuse of delegated authority, and trust between agents. Paired mitigations for each.
+
 - **[AI Assurance: A Repeatable Process for Assuring AI-Enabled Systems](https://www.mitre.org/news-insights/publication/ai-assurance-repeatable-process-assuring-ai-enabled-systems)** (MITRE Corporation, USA)
 
   The document presents a comprehensive framework for AI assurance, focusing on managing risks across the lifecycle of AI-enabled systems. The framework integrates risk management practices and emphasizes a repeatable engineering process to ensure AI systems operate effectively while managing safety, security, privacy, and other key trust factors. Through a detailed assurance plan, the process addresses system characterization, risk discovery, and evaluation, making it adaptable to various sectors. The approach leverages real-world pilot studies to highlight its applicability, and promotes sector-specific solutions for domain-specific outcomes.
+
+- **[AI Controls Matrix](https://cloudsecurityalliance.org/artifacts/ai-controls-matrix)** (Cloud Security Alliance (CSA), International)
+
+  A control framework for AI systems in the same shape as the Cloud Controls Matrix: a list of controls with implementation guidance and mappings to other standards, meant for assessing an AI deployment rather than reasoning about it.
 
 - **[AI Cyber Security Code of Practice](https://www.gov.uk/government/publications/ai-cyber-security-code-of-practice)** (Department for Science, Innovation and Technology (DSIT), UK)
 
@@ -59,6 +71,10 @@ A collection of guides and frameworks (not laws) from government-affiliated or o
 - **[AI Data Security: Best Practices for Securing Data Used to Train and Operate AI Systems](https://www.cisa.gov/news-events/alerts/2025/05/22/new-best-practices-guide-securing-ai-data-released)** (Cybersecurity and Infrastructure Security Agency (CISA), National Security Agency (NSA) and Federal Bureau of Investigation (FBI), USA)
 
   A joint cybersecurity information sheet released on 22 May 2025 by CISA, the National Security Agency, the FBI and partner agencies in Australia, New Zealand and the United Kingdom. It sets out the risks that arise from data security and integrity problems across the AI lifecycle, from development and testing through deployment and operation, and the practices that address them: data protection measures, risk management, monitoring, threat detection and network defence. This CISA alert page links to the full PDF.
+
+- **[AI Model Risk Management Framework](https://cloudsecurityalliance.org/artifacts/ai-model-risk-management-framework)** (Cloud Security Alliance (CSA), International)
+
+  Framework for managing risk at the model level, covering how a model is selected, validated, monitored and retired. Aimed at organisations answerable for a model's behaviour in production rather than at the people training it.
 
 - **[AI Risk Assessment for ML Engineers](https://learn.microsoft.com/en-us/security/ai-red-team/ai-risk-assessment)** (Microsoft, USA)
 
@@ -71,6 +87,10 @@ A collection of guides and frameworks (not laws) from government-affiliated or o
 - **[AI Security Concerns in a Nutshell](https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/KI/Practical_Al-Security_Guide_2023.pdf)** (Federal Office for Information Security, Germany)
 
   This guide introduces key security concerns associated with AI systems, particularly focusing on attacks and defenses relevant to machine learning models. It outlines categories such as evasion attacks, information extraction, and backdoor attacks, emphasizing the importance of secure AI system design. With AI being used in critical sectors like healthcare and autonomous driving, the guide stresses the importance of defensive measures against malicious manipulation, especially when using pre-trained models or public datasets. The document aims to provide initial guidance for developers on securing AI systems without claiming to be exhaustive.
+
+- **[AI Security Verification Standard (AISVS)](https://github.com/OWASP/AISVS)** (OWASP, International)
+
+  A verification standard for AI applications, structured as testable requirements at several levels of rigour, in the same shape as the ASVS for web applications. Intended for stating what was verified rather than claiming a system is secure. CC-BY-SA-4.0.
 
 - **[Artificial Intelligence Risk Management Framework (NIST AI 100-1)](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf)** (National Institute of Standards and Technology (NIST), USA)
 
@@ -100,13 +120,45 @@ A collection of guides and frameworks (not laws) from government-affiliated or o
 
   Published by the OWASP Gen AI Security Project on 22 January 2025, this guide describes what red teaming a generative AI system involves in practice. It covers model evaluation, implementation testing, infrastructure assessment and runtime behaviour analysis, and treats red teaming as a programme rather than a one-off exercise. The PDF downloads without registration.
 
+- **[GenAI Security Project Threat Defense COMPASS 1.0](https://genai.owasp.org/resource/owasp-genai-security-project-threat-defense-compass-1-0/)** (OWASP, International)
+
+  A method for connecting observed threats to the defences that address them, so a programme can be described in terms of coverage rather than a list of tools. Released as version 1.0.
+
+- **[Guidelines for secure AI system development](https://www.ncsc.gov.uk/collection/guidelines-secure-ai-system-development)** (National Cyber Security Centre (NCSC), UK)
+
+  Guidelines covering the whole lifecycle, from secure design through development, deployment and operation. Published by the UK NCSC with CISA and co-sealed by agencies from a further sixteen countries, which makes it one of the few pieces of AI security guidance with broad international sign-off.
+
 - **[Inspect Framework](https://inspect.ai-safety-institute.org.uk/)** (UK AI Safety Institute, UK)
 
   Inspect,a framework for large language model evaluations created by the UK AI Safety Institute, provides many built-in components, including facilities for prompt engineering, tool usage, multi-turn dialog, and model graded evaluations. Extensions to Inspect (e.g. to support new elicitation and scoring techniques) can be provided by other Python packages.
 
+- **[ISO/IEC 22989:2022 Information technology,  Artificial intelligence , Artificial intelligence concepts and terminology](https://www.iso.org/standard/74296.html)** (International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC), International)
+
+  The vocabulary standard the other ISO AI documents build on, fixing what terms such as machine learning, model and AI system mean. Useful mainly when a contract or policy needs words that are defined somewhere other than a vendor's marketing. Published 2022.
+
+- **[ISO/IEC 23894:2023 Information technology,  Artificial intelligence , Guidance on risk management](https://www.iso.org/standard/77304.html)** (International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC), International)
+
+  Guidance on applying risk management to AI, mapping the general ISO 31000 approach onto AI-specific sources of risk. Guidance rather than requirements, so it is read alongside 42001 rather than certified against. Published 2023.
+
+- **[ISO/IEC 42001:2023 Information technology,  Artificial intelligence , Management system](https://www.iso.org/standard/81230.html)** (International Organization for Standardization (ISO) and International Electrotechnical Commission (IEC), International)
+
+  The certifiable management-system standard for AI, in the same family as ISO/IEC 27001 for information security. It specifies how an organisation establishes, runs and improves an AI management system rather than how any model is built, which makes it the document auditors and procurement ask for. Published 2023.
+
 - **[ISO/IEC CD 27090](https://www.iso.org/standard/56581.html)** (ISO, International)
 
   This document (still in draft status) offers guidance to organizations on managing security threats and failures in AI systems. It provides insights into the consequences of such threats throughout the AI lifecycle and offers strategies for detection and mitigation. The guidance is applicable to organizations of all sizes and sectors, including public and private companies, government agencies, and non-profits, that are involved in the development or use of AI systems.
+
+- **[LLM and Gen AI Data Security Best Practices](https://genai.owasp.org/resource/llm-and-gen-ai-data-security-best-practices/)** (OWASP, International)
+
+  Practices for the data side of generative AI: what goes into training and retrieval, how it is classified and retained, and where it can leak back out through a model. The half of AI security that is a data-governance problem.
+
+- **[LLM Applications Cybersecurity and Governance Checklist](https://genai.owasp.org/resource/llm-applications-cybersecurity-and-governance-checklist-english/)** (OWASP, International)
+
+  A checklist for organisations adopting LLM applications, covering governance, legal and regulatory questions as well as technical controls. Written for the people who have to sign off on a deployment.
+
+- **[LLM Threats Taxonomy](https://cloudsecurityalliance.org/artifacts/csa-large-language-model-llm-threats-taxonomy)** (Cloud Security Alliance (CSA), International)
+
+  A taxonomy of threats specific to large language models, giving named categories to sort findings into. Sits alongside the NIST adversarial-ML taxonomy already listed here, from an industry rather than a standards-body perspective.
 
 - **[Managing Misuse Risk for Dual-Use Foundation Models (NIST AI 800-1 initial public draft)](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.800-1.ipd.pdf)** (National Institute of Standards and Technology (NIST), USA)
 
@@ -124,13 +176,25 @@ A collection of guides and frameworks (not laws) from government-affiliated or o
 
   OCCULT is a framework designed to quantify the risks of LLMs when used in offensive cyber operations. Instead of red-teaming the model to see how it might fail, OCCULT is about assessing how an LLM itself could be weaponized by attackers or used as a “cyber agent.”
 
+- **[OWASP AI Exchange](https://owaspai.org/)** (OWASP, International)
+
+  An open reference covering AI security threats, the controls that address them and the practices around both, written by a group of more than 170 contributors and published as a browsable site and a single PDF. It runs to over 300 pages and feeds into the standards work behind the EU AI Act and ISO, with mappings to other frameworks. Free, no registration, and the source repository was last updated on 31 August 2026.
+
 - **[OWASP AI Testing Guide](https://owasp.org/www-project-ai-testing-guide/)** (OWASP, International)
 
   A testing methodology for AI and LLM systems, with repeatable test cases spanning the application, model, infrastructure and data layers. It covers adversarial manipulation, information leakage, data poisoning, bias, hallucination, unsafe autonomy and model degradation. Version 1 was published on 26 November 2025 and is available as a PDF and as browsable documentation. Led by Matteo Meucci and Marco Morana.
 
-- **[OWASP LLM Top 10](https://owasp.org/www-project-top-10-for-large-language-model-applications/)** (OWASP, International)
+- **[OWASP LLM Top 10](https://genai.owasp.org/resource/owasp-genai-llm-top-10-2026/)** (OWASP, International)
 
-  The OWASP LLM Top 10 provides a comprehensive list of the most critical security vulnerabilities in Large Language Model (LLM) applications. These vulnerabilities, such as prompt injections, training data poisoning, and insecure output handling, expose systems to risks including unauthorized access, privacy violations, and model theft. The guide aims to raise awareness, educate stakeholders, and offer remediation strategies to enhance the security of LLM systems, while mitigating potential risks in real-world applications. The goal is to improve the overall security posture of LLM deployments across industries.
+  The OWASP Gen AI Security Project's list of the ten most critical security risks in applications built on large language models, with mitigations for each and mappings to NIST, MITRE ATLAS and the CSA AI Controls Matrix. The 2026 edition was published on 4 August 2026 and is the current one: prompt injection and sensitive information disclosure hold the first two places, excessive agency moves up to third, and hidden context exposure replaces system prompt leakage. The PDF downloads without registration. The older owasp.org project page is now kept as a historical archive and states that "active development has moved to the OWASP GenAI Security Project repository".
+
+- **[OWASP Machine Learning Security Top 10](https://owasp.org/www-project-machine-learning-security-top-10/)** (OWASP, International)
+
+  The Top 10 for machine learning systems generally, covering input manipulation, data poisoning, model inversion, membership inference and supply-chain attacks. Distinct from the LLM Top 10 also listed here: this one is about ML systems rather than language-model applications.
+
+- **[OWASP Top 10 for Agentic Applications](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)** (OWASP, International)
+
+  A companion list to the LLM Top 10, covering the risks that appear once a model plans, holds memory, calls tools and acts with delegated authority. The ten categories run from agent goal hijack and tool misuse through identity and privilege abuse, memory and context poisoning, insecure inter-agent communication and cascading agent failures, each mapped to reported incidents and to defences across the development lifecycle. The 2026 edition was published on 9 December 2025 and downloads without registration.
 
 - **[Red Teaming Methodology Guide for AI Safety](https://aisi.go.jp/output/output_information/250331_1/)** (Japan AI Safety Institute, Japan)
 
@@ -210,9 +274,21 @@ A collection of guides and frameworks (not laws) from government-affiliated or o
 
 Read, use, and live at your own risk.
 
+- **[Adversarial Robustness Toolbox (ART)](https://github.com/Trusted-AI/adversarial-robustness-toolbox)**
+
+  Python library for machine learning security, hosted by the Linux Foundation AI and Data Foundation. It implements evasion, poisoning, extraction and inference attacks together with the matching defences and robustness metrics, and works with TensorFlow, Keras, PyTorch, scikit-learn, XGBoost, LightGBM, CatBoost and GPy across images, tables, audio and video. MIT licence. The last commit on the main branch was on 13 November 2025.
+
 - **[AgentDojo](https://github.com/ethz-spylab/agentdojo)**
 
   A dynamic environment for evaluating prompt injection attacks and defences against LLM agents, from ETH Zurich's SPY Lab with Invariant Labs. It ships user tasks and injection tasks so that attacks and defences can be measured on the same ground, and accompanies a paper in the NeurIPS 2024 datasets and benchmarks track.
+
+- **[AgenticSecurity](https://github.com/msoedov/agentic_security)**
+
+  Vulnerability scanner aimed at LLM applications and agents, running a library of attack techniques against a target endpoint and reporting what got through. Configurable for custom integrations rather than assuming a particular provider. Apache-2.0.
+
+- **[AI Infra Guard](https://github.com/Tencent/AI-Infra-Guard)**
+
+  Tencent's red-teaming platform for AI systems, covering model endpoints, agents and MCP servers, with a scanner for known weaknesses in AI infrastructure components alongside the prompt-level testing. Apache-2.0.
 
 - **[AI Prompt Fuzzer](https://github.com/PortSwigger/ai-prompt-fuzzer)**
 
@@ -221,6 +297,14 @@ Read, use, and live at your own risk.
 - **[AI Red Teaming Playground Labs](https://github.com/microsoft/AI-Red-Teaming-Playground-Labs)**
 
   This repository contains the challenges for the labs that were used in the course AI Red Teaming in Practice. The course was originally taught at Black Hat USA 2024.
+
+- **[AIGoat](https://github.com/orcasecurity-research/AIGoat)**
+
+  Deliberately vulnerable AI infrastructure from Orca's research team, built to be attacked as a learning exercise. The AI equivalent of the older intentionally-insecure web apps, useful for practising against something you are allowed to break. Last updated in September 2025.
+
+- **[Anamorpher](https://github.com/trailofbits/anamorpher)**
+
+  Implements image-scaling attacks for multimodal prompt injection: an image that looks innocuous at full size resolves into instructions once the pipeline downsamples it, so a human reviewer and the model see different content. Companion to the Trail of Bits write-up listed under guides and tutorials. Apache-2.0.
 
 - **[Charcuterie](https://github.com/moohax/Charcuterie)**
 
@@ -246,6 +330,14 @@ Read, use, and live at your own risk.
 
   Dioptra is a NIST software test platform for assessing the trustworthy characteristics of artificial intelligence. Dioptra provides a REST API, which can be controlled via an intuitive web interface, a Python client, or any REST client library of the user's choice for designing, managing, executing, and tracking experiments.
 
+- **[EasyJailbreak](https://github.com/EasyJailbreak/EasyJailbreak)**
+
+  Python framework for building and running jailbreak attacks against language models, assembling published methods into comparable components so techniques can be measured against each other rather than demonstrated one at a time. GPL-3.0.
+
+- **[Foolbox](https://github.com/bethgelab/foolbox)**
+
+  Long-running library for generating adversarial examples against neural networks, with a large collection of published attacks and support for PyTorch, TensorFlow and JAX. From the Bethge Lab. Last updated in December 2025.
+
 - **[FuzzyAI](https://github.com/cyberark/FuzzyAI)**
 
   CyberArk’s coverage-guided fuzzer that auto-generates malicious prompts across 10+ attack families and logs jailbreak success rates. Ideal for CI red-team pipelines.
@@ -254,17 +346,33 @@ Read, use, and live at your own risk.
 
   Garak is an open-source framework designed to identify vulnerabilities in Large Language Models (LLMs).
 
+- **[GPTFuzzer](https://github.com/hubertyoo/GPTFuzz)**
+
+  Reference implementation of GPTFuzzer, which starts from human-written jailbreak templates and mutates them to find prompts that transfer across models. Accompanies the paper of the same name. Last updated in February 2026.
+
 - **[Guardrails AI](https://github.com/guardrails-ai/guardrails)**
 
   YAML/Python DSL to validate or repair LLM outputs (regex, JSON Schema, semantic similarity, PII) and automatically re-ask on failure.
 
 - **[Lakera PINT Benchmark](https://github.com/lakeraai/pint-benchmark)**
 
-  The Prompt Injection Test (PINT) Benchmark provides a neutral way to evaluate the performance of a prompt injection detection system.
+  The Prompt Injection Test (PINT) Benchmark provides a neutral way to evaluate the performance of a prompt injection detection system. Archived by its owner on 5 August 2026 and now read-only, so it receives no further updates. The last commit was on 16 April 2026.
 
 - **[LLM Guard](https://github.com/protectai/llm-guard)**
 
   Drop-in Python/REST library that redacts PII, blocks jailbreak strings, enforces token limits, detects policy violations. Ships with a CLI and Hugging Face model hub presets. Archived by its maintainer on 9 July 2026 and now read-only, so it receives no further updates.
+
+- **[MCP Context Protector](https://github.com/trailofbits/mcp-context-protector)**
+
+  Security wrapper that sits between an MCP client and its servers, so tool descriptions and responses can be inspected and constrained rather than trusted by default. Aimed at the trust boundary an agent crosses whenever it calls a tool. Apache-2.0.
+
+- **[Model Transparency](https://github.com/sigstore/model-transparency)**
+
+  Sigstore project for signing and verifying machine-learning models, so a model can be traced to who produced it and checked for tampering before it is loaded. Addresses the supply-chain half of model security rather than the model's behaviour. Apache-2.0.
+
+- **[Moonshot](https://github.com/aiverify-foundation/moonshot)**
+
+  Evaluation and red-teaming toolkit from Singapore's AI Verify Foundation, combining benchmark runs with interactive red teaming behind one interface. Institutional rather than vendor-backed. Apache-2.0.
 
 - **[NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)**
 
@@ -281,6 +389,14 @@ Read, use, and live at your own risk.
 - **[Parley](https://github.com/dreadnode/Parley)**
 
   This is a minimal implementation of the "Tree of Attacks (TAP): Jailbreaking Black-Box LLMs Automatically" Research by Robust Intelligence. Last updated in February 2024.
+
+- **[picklescan](https://github.com/mmaitre314/picklescan)**
+
+  Scanner for Python pickle files that detects the imports and calls used to run code on load. Directly relevant because several model formats are pickles underneath, so loading a downloaded model can be equivalent to running its author's code. MIT.
+
+- **[pipelock](https://github.com/luckyPipewrench/pipelock)**
+
+  Firewall for AI agents, covering MCP traffic and outbound network access so an agent's tool use and egress can be constrained at runtime rather than only at the prompt. Apache-2.0.
 
 - **[PoisonedRAG](https://github.com/sleeepeer/PoisonedRAG)**
 
@@ -302,13 +418,25 @@ Read, use, and live at your own risk.
 
   Microsoft's Python Risk Identification Tool for generative AI: an automation framework for red teaming that supplies attack strategies, scores model responses and keeps conversation history across runs. Documentation, including installation and worked examples, is at microsoft.github.io/PyRIT. The repository moved from the Azure organisation to microsoft, and the old location is archived. MIT licence.
 
+- **[SkillSpector](https://github.com/NVIDIA/SkillSpector)**
+
+  NVIDIA's scanner for AI agent skills: it inspects skill definitions for prompt injection, unsafe tool use and permission problems before they are installed. Aimed at the packaging layer, which is newer than the model layer and less well covered. Apache-2.0.
+
 - **[Snyk Agent Scan](https://github.com/snyk/agent-scan)**
 
   Scanner that discovers agent components on a machine, including MCP servers, agents and skills, and checks them for prompt injections and known vulnerabilities. It started as Invariant Labs' mcp-scan and is now maintained by Snyk under the name agent-scan.
 
+- **[spikee](https://github.com/ReversecLabs/spikee)**
+
+  Prompt injection toolkit from Reversec Labs for building test datasets, running them against a target and measuring what succeeded, so injection resistance can be tracked over time rather than probed once. Apache-2.0.
+
 - **[tensor-man](https://github.com/dreadnode/tensor-man)**
 
   tensor-man is a utility to inspect, validate, sign and verify machine learning model files.
+
+- **[TextAttack](https://github.com/QData/TextAttack)**
+
+  Framework for adversarial attacks, data augmentation and adversarial training on NLP models, with published attack recipes reimplemented against a common interface. One of the established tools for text-domain adversarial work. MIT.
 
 - **[TruLens](https://github.com/truera/trulens)**
 
@@ -326,6 +454,14 @@ Read, use, and live at your own risk.
 
 Provided for informational purposes only. Read, use, and live at your own risk.
 
+- **[Agentic AI Threat Modeling Framework: MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)**
+
+  Cloud Security Alliance threat-modelling method aimed at agentic systems, where the usual approaches fit badly because the agent plans, calls tools and acts across trust boundaries. It works through seven layers, from the foundation model up to the agent ecosystem, and asks what can go wrong at each. Published February 2025.
+
+- **[ClearML Vulnerabilities: Exploiting MLOps for Remote Code Execution](https://hiddenlayer.com/research/not-so-clear-how-mlops-solutions-can-muddy-the-waters-of-your-supply-chain/)**
+
+  HiddenLayer write-up on reaching remote code execution through an MLOps platform rather than through the model. Useful as a concrete example of the argument that the pipeline around a model is as much of a target as the model, and easier to reach.
+
 - **[Defending Against Vision Prompt Injection Attacks in Large Language Models](https://blog.roboflow.com/gpt-4-vision-prompt-injection/)**
 
   This article explores the concept of Vision Prompt Injection vulnerabilities in Large Language Models (LLMs) with image processing capabilities, where malicious instructions can be embedded within images, even invisibly, to make the model perform unauthorized actions or extract sensitive data. The article showcases real-life examples of Vision Prompt Injection attacks and discusses the challenges and potential strategies for defending against them as businesses start to build applications using multimodal LLMs.
@@ -334,17 +470,53 @@ Provided for informational purposes only. Read, use, and live at your own risk.
 
   A series of blog posts focused on machine learning from a red teaming and security testing perspective. The author covers various topics, including machine learning basics, building a machine learning system called Husky AI, threat modeling, practical attacks, and defenses.
 
+- **[Exploring Prompt Injection Attacks](https://www.nccgroup.com/research/exploring-prompt-injection-attacks/)**
+
+  NCC Group primer from December 2022, written while prompt injection was still new. Explains what a prompt is in the machine-learning sense, how injection abuses that, what it can reach, and what to do about it. Still one of the clearer first explanations of the mechanism.
+
 - **[Failure Modes in Machine Learning](https://learn.microsoft.com/en-us/security/engineering/failure-modes-in-machine-learning)**
 
   This document tabulates both intentional and unintentional failure modes in machine learning systems. Intentional failures are caused by an active adversary attempting to subvert the system to attain their goals, while unintentional failures occur when an ML system produces a formally correct but completely unsafe outcome. The document aims to provide a common vocabulary for engineers, lawyers, and policymakers to discuss these issues and build solutions.
+
+- **[GenAI Incident Response Guide 1.0](https://genai.owasp.org/resource/genai-incident-response-guide-1-0/)**
+
+  OWASP guide on responding to incidents involving generative AI, covering what differs from ordinary incident response: prompts and outputs as evidence, model and data rollback, and the fact that the same input may not reproduce the same failure.
+
+- **[Hacking deep learning: model inversion attack by example](https://blogs.rstudio.com/ai/posts/2020-05-15-model-inversion-attacks/)**
+
+  Worked example of a model inversion attack on the Posit (formerly RStudio) AI blog, reconstructing training data from a model's outputs with the code alongside. Reads as a tutorial rather than a paper summary.
+
+- **[Machine Learning Models are Code](https://hiddenlayer.com/research/models-are-code/)**
+
+  HiddenLayer research making the case that a serialised model is executable content, not inert data, and showing what that allows. Pairs with the Safetensors write-up already listed here.
+
+- **[Microsoft AI Red Team](https://learn.microsoft.com/en-us/security/ai-red-team)**
+
+  Microsoft's entry point for its AI red teaming material: how the team is organised, how it plans an operation, and what it looks for. The starting point for the failure-mode and threat-modelling documents also listed here.
+
+- **[Multi-Agentic System Threat Modeling Guide v1.0](https://genai.owasp.org/resource/multi-agentic-system-threat-modeling-guide-v1-0/)**
+
+  OWASP guide to threat modelling systems of several interacting agents, where the risks come from delegation, shared memory and trust between agents rather than from any one model.
 
 - **[PIPE - Prompt Injection Primer for Engineers](https://github.com/jthack/PIPE)**
 
   This guide, by Joseph Thacker, assists developers in creating secure AI-powered applications and features by helping them understand the actual risks of prompt injection. Last updated in August 2023.
 
+- **[PrivacyRaven: Implementing a proof of concept for model inversion](https://blog.trailofbits.com/2021/11/09/privacyraven-implementing-a-proof-of-concept-for-model-inversion/)**
+
+  Trail of Bits write-up on building a working model inversion proof of concept, including what did not work. Useful for the engineering detail rather than the result.
+
 - **[Prompt Injection Attacks Handbook](https://www.lakera.ai/ai-security-guides/prompt-injection-attacks-handbook)**
 
   A practical handbook on prompt injection: attack techniques, real-world examples, and the defensive measures available against them.
+
+- **[Red-Teaming Large Language Models](https://huggingface.co/blog/red-teaming)**
+
+  Hugging Face introduction to red teaming language models: what it is, how it differs from ordinary evaluation, and how findings feed back into training. A reasonable first read before picking up a red-teaming tool.
+
+- **[Securing Agentic Applications Guide 1.0](https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/)**
+
+  OWASP guide for people building agentic applications, covering tool access, permissions, memory and the places an agent can be induced to act against its operator.
 
 - **[Silent Sabotage: Hijacking Safetensors conversion on Hugging Face](https://hiddenlayer.com/research/silent-sabotage/)**
 
@@ -358,6 +530,10 @@ Provided for informational purposes only. Read, use, and live at your own risk.
 
   Simon Willison's post from 16 June 2025 naming the three properties that together make an AI agent exploitable: access to private data, exposure to untrusted content, and the ability to communicate externally. It is a short, concrete account of how prompt injection turns into data exfiltration once an agent holds tools, and the phrase has become common shorthand when reviewing agent designs.
 
+- **[The Month of AI Bugs](https://embracethered.com/blog/tags/month-of-ai-bugs/)**
+
+  Johann Rehberger published one vulnerability a day through August 2025, ending with 29 issues across AI coding agents and assistants including GitHub Copilot, Claude Code, Amazon Q Developer, Cursor, Windsurf, Devin, OpenHands and Google Jules. Most are prompt injection turning into data exfiltration or remote code execution, and each post carries the reproduction steps and the disclosure timeline. This tag page indexes the series; the wrap-up is dated 30 August 2025.
+
 - **[The Waluigi Effect (mega-post)](https://www.lesswrong.com/posts/D7PumeYTDPfBTp3i7/the-waluigi-effect-mega-post)**
 
   The Waluigi Effect is a phenomenon in large language models (LLMs) where training an LLM to satisfy a desirable property makes it easier to elicit the opposite behavior. Using Simulator Theory, the author argues that LLMs produce a superposition of well-behaved "luigi" and misbehaving "waluigi" simulacra, suggesting that techniques like RLHF may fail to eliminate deceptive waluigis and could make chatbots more misaligned. This has important implications for AI security, as it highlights the challenge of aligning LLMs and suggests that misalignment risks could increase with model capability. Understanding the Waluigi Effect is crucial for developing robust alignment strategies to prevent negative outcomes and existential risks.
@@ -370,9 +546,17 @@ Provided for informational purposes only. Read, use, and live at your own risk.
 
   This article proposes using a separate language model, acting as a suspicious AI safety engineer named "Eliezer Yudkowsky," to evaluate prompts before sending them to ChatGPT. The goal is to prevent jailbreaking attempts and filter out dangerous prompts that could lead to harmful or illegal behavior from the AI chatbot.
 
+- **[Weaponizing image scaling against production AI systems](https://blog.trailofbits.com/2025/08/21/weaponizing-image-scaling-against-production-ai-systems/)**
+
+  Trail of Bits research from August 2025 on hiding instructions that appear only once an image is downscaled by the pipeline, so the model sees content a reviewer looking at the original never would.
+
 ## Courses
 
 Do your own research and due diligence before enrolling.
+
+- **[AI Red Teamer Path (Hack The Box Academy)](https://academy.hackthebox.com/path/preview/ai-red-teamer)** (3-Advanced, Above 5 hours)
+
+  A job role path on Hack The Box Academy built in collaboration with Google and mapped to Google's Secure AI Framework. Twelve modules and 230 sections covering prompt injection, jailbreaks, adversarial machine learning, model privacy attacks, supply chain risk and deployment threats, worked through hands-on in the platform's labs. The curriculum outline is public; working through the modules needs an HTB Academy account. Rated hard.
 
 - **[AI Security Essentials](https://www.udemy.com/course/ai-security-essentials/)** (1-Beginner, Under 5 hours)
 
@@ -446,7 +630,13 @@ Do your own research and due diligence before enrolling.
 
 Join at your own risk. Lurk at your own risk. Interact at your own risk.
 
-- **[AI security](https://www.linkedin.com/groups/8196854/)** (Individual, LinkedIn)
+- **[AI Security](https://www.linkedin.com/groups/8196854/)** (Community, LinkedIn)
+
+  A small LinkedIn group for AI security discussion, community run, with posts through 2026. Membership is under a thousand, which keeps it at conversation scale. LinkedIn shows the group to signed-in members only, so joining is the only way to read it.
+
+- **[AI Security Forum](https://aisecurity.forum/)** (Nonprofit, Event series)
+
+  An event series for people working across AI, cybersecurity and national security, with the stated aim of securing powerful models. Editions have run in Las Vegas, Washington DC, Paris and Tel Aviv since 2023, alongside a reading group in DC, and attendance is by application. It publishes a code of conduct and an information sharing policy, and is fiscally sponsored by Hack Club, a 501(c)(3) nonprofit.
 
 - **[AI Village](https://aivillage.org/)** (Community, Discord)
 
@@ -456,7 +646,13 @@ Join at your own risk. Lurk at your own risk. Interact at your own risk.
 
   A Cloud Security Alliance research working group building best practices for AI, with an initial focus on generative AI. Anyone can join, and the time commitment ranges from reviewing a near-final publication to co-authoring new research. Output is published as free CSA papers.
 
-- **[MLSecOps](https://mlsecops.slack.com/join/shared_invite/zt-24f8mmm45-Qc9qfZVxzBL4J5vcuLjaVw)** (Company, Slack)
+- **[Global AI Security Community](https://www.meetup.com/ai-sec/)** (Community, Meetup)
+
+  A practitioner-led Meetup group covering LLM, agent and generative AI security, from prompt injection and data leakage through tool misuse, supply chain risk, model governance and runtime guardrails. It runs talks, workshops and community demos, and with over eleven thousand members it is one of the larger AI security groups on the platform. Organised from Pune, India, so check session times before planning around them.
+
+- **[huntr](https://discord.com/invite/GBmmty82CM)** (Company, Discord)
+
+  The Discord behind huntr, a bug bounty platform for AI and machine learning projects, where researchers discuss findings, triage and what is in scope. huntr was built by Protect AI, now part of Palo Alto Networks; the platform and this Discord carry on under the huntr name.
 
 - **[OWASP Gen AI Security Project](https://genai.owasp.org/contribute/)** (Nonprofit, Slack)
 
@@ -470,9 +666,25 @@ Useful references that do not fit neatly anywhere else on the map.
 
   The AI Incident Database is dedicated to indexing the collective history of harms or near harms realized in the real world by the deployment of artificial intelligence systems. Like similar databases in aviation and computer security, the AI Incident Database aims to learn from experience so we can prevent or mitigate bad outcomes.
 
+- **[Awesome AI Security (ottosulin)](https://github.com/ottosulin/awesome-ai-security)**
+
+  Long-running community list of AI security resources, running since June 2023 and still updated. Covers frameworks and taxonomies, offensive and defensive tooling, papers and vulnerability databases. Broader and less selective than a curated map, which is the point: it is where to look when you want everything on a topic rather than a short answer. MIT licence.
+
+- **[Awesome AI Security Tools (scadastrangelove)](https://github.com/scadastrangelove/awesome-ai-security-tools)**
+
+  Tool-focused list covering AI security and AI-assisted security work: agent security, ML supply chain, pentest agents, AI SAST, LLM-driven fuzzing, SOC and SIEM triage, and LLM red teaming. It includes commercial products alongside open source and says so, so read it as an inventory rather than a recommendation. Started May 2026 and updated frequently.
+
+- **[Awesome MLSecOps](https://github.com/RiccardoBiosas/awesome-MLSecOps)**
+
+  MLSecOps list covering the operational side: model scanning, supply-chain protection, pipeline security, adversarial ML defence and AI red teaming. Running since April 2023, still updated, and mirrored at awesomemlsecops.com. The closest thing here to a map of securing the machine-learning pipeline itself rather than the model. MIT licence.
+
 - **[Cybersecurity Risks of AI-Generated Code](https://cset.georgetown.edu/publication/cybersecurity-risks-of-ai-generated-code/)**
 
   This issue brief explores the cybersecurity risks of AI-generated code, highlighting challenges posed by large language models used in software development. The report categorizes risks into three areas: insecure code generation, model vulnerabilities, and downstream impacts like feedback loops in AI training. Experimental findings show that nearly half of the evaluated code snippets from five prominent LLMs contained impactful bugs, emphasizing the importance of comprehensive security assessments. It also discusses the unequal risk distribution across organizations, the need for multi-stakeholder mitigation strategies, and enhancements in existing cybersecurity frameworks to address these novel challenges.
+
+- **[MIT AI Risk Repository](https://airisk.mit.edu/)**
+
+  A living database of more than 1,700 AI risks extracted from 74 published frameworks and classifications, maintained by the AI Risk Initiative at MIT FutureTech. Each risk is filed twice: by cause (which entity, intentional or not, before or after deployment) and by domain, across seven domains and 24 subdomains that include malicious actors, privacy and AI system safety. Version 4 went live on 4 December 2025. The database is free to copy under CC BY 4.0, and the same group runs an AI incident tracker alongside it.
 
 - **[NSA Artificial Intelligence Security Center](https://www.nsa.gov/AISC/)**
 
