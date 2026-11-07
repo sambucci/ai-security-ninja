@@ -15,7 +15,7 @@
       ▄██▀▀██▄      ╚═╝  ╚═══╝╚═╝╚═╝  ╚═══╝ ╚════╝ ╚═╝  ╚═╝          ▀
     ▄██▀    ▀██▄
 
-ENTRIES  210              SECTIONS  7               LAST REVIEWED  2026-10-05
+ENTRIES  212              SECTIONS  7               LAST REVIEWED  2026-10-20
 ```
 
 A curated, living map of AI security: frameworks, foundational papers, code, guides, courses and communities. This repository mirrors the curated sections of [aisecurity.ninja](https://aisecurity.ninja) and rebuilds itself from the site's data once a month.
@@ -24,13 +24,13 @@ I built the map as my own reference and made it public because it seemed useful.
 
 **Inclusion is not endorsement.** I am not affiliated with, endorsed by or connected to any of the projects, organisations, courses or communities listed. Entries are amended or removed on evidence; see [how to suggest a change](#about-this-repository) at the end.
 
-210 entries in 7 sections. Sections last reviewed on the site: 2026-10-05.
+212 entries in 7 sections. Sections last reviewed on the site: 2026-10-20.
 
 ## Contents
 
 - [Frameworks and Governance](#frameworks-and-governance) (53)
 - [Foundational papers](#foundational-papers) (11)
-- [Code and PoCs](#code-and-pocs) (78)
+- [Code and PoCs](#code-and-pocs) (80)
 - [Guides and Tutorials](#guides-and-tutorials) (25)
 - [Courses](#courses) (24)
 - [Communities](#communities) (7)
@@ -450,9 +450,17 @@ Read, use, and live at your own risk.
 
   A Python SDK and command line tool for testing AI agents as deployed, covering prompt injection, jailbreaks and goal hijacking against the running system rather than the model in isolation. Apache licensed, with a hosted app and API alongside the library.
 
+- **[HarmBench](https://github.com/centerforaisafety/HarmBench)**
+
+  The Center for AI Safety's standard evaluation framework for automated red teaming. It fixes the harmful requests and the judging, so that attack and defence results from different papers measure the same thing: 400 text behaviours split into standard, contextual and copyright types, across subjects from cybercrime to chemical and biological harm, a separate multimodal set, and classifier models that decide whether a response actually carried out the behaviour. The accompanying paper compares 18 red teaming methods against 33 target models and defences. Last updated August 2024; a benchmark that holds still is what keeps results comparable across papers.
+
 - **[Julius](https://github.com/praetorian-inc/julius)**
 
   Fingerprints which AI serving software sits behind an address, covering Ollama, vLLM, LiteLLM and more than sixty others. A narrow tool that answers one question quickly, and a sensible first step before the broader scanning that AIMap does.
+
+- **[L1B3RT4S](https://github.com/elder-plinius/L1B3RT4S)**
+
+  A collection of jailbreak prompts maintained by elder-plinius, organised into one file per provider or product, covering around forty of them from OpenAI, Anthropic, Google and Meta through to coding tools such as Cursor and Windsurf, plus material on special tokens and system prompts. Useful to red teamers as a corpus of known attacks to test a deployment against. The prompts target production models directly, so any given one may already have been patched. Last updated February 2026.
 
 - **[Lakera PINT Benchmark](https://github.com/lakeraai/pint-benchmark)**
 
@@ -493,6 +501,10 @@ Read, use, and live at your own risk.
 - **[NeMo Guardrails](https://github.com/NVIDIA-NeMo/Guardrails)**
 
   NVIDIA's open-source toolkit for adding programmable guardrails to LLM-based conversational systems. Rails are written in a dedicated modelling language and can hold a conversation to permitted topics, check inputs and outputs, and gate tool calls.
+
+- **[OBLITERATUS](https://github.com/elder-plinius/OBLITERATUS)**
+
+  A toolkit for abliteration: locating the directions in an open-weight model's hidden states that drive refusal, and removing them without retraining, with the stated aim of keeping the model's general capability intact. Covers the pipeline from probing the hidden states to producing the modified model, and has a hosted demo on Hugging Face. Runs with telemetry enabled contribute anonymous benchmark data to a shared dataset. Relevant to the abliteration research in the papers archive, including work on defending against it. From the same author as L1B3RT4S.
 
 - **[Offensive ML Playbook](https://wiki.offsecml.com/Welcome+to+the+Offensive+ML+Playbook)**
 
@@ -609,10 +621,6 @@ Read, use, and live at your own risk.
 - **[Vigil-LLM](https://github.com/deadbits/vigil-llm)**
 
   Alpha-stage scanner and REST API that applies a configurable chain of detectors to find prompt injections, jailbreaks, and other threats in prompts/responses. Last updated in January 2024.
-
-- **[WallBreaker](https://github.com/JailbrokenAI/wallbreaker)**
-
-  Command-line harness for automated LLM red teaming, built around an agent loop that keeps refining prompts against a target until it succeeds or hands back to the operator. Bundles the HarmBench behaviour benchmark, the L1B3RT4S jailbreak library and the Parseltongue transform set, and implements published techniques including PAIR, TAP and Crescendo. Needs API keys for the attacking, target and judge models. AGPL-3.0, first released in June 2026.
 
 ## Guides and Tutorials
 
